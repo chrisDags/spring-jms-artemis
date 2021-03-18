@@ -49,7 +49,7 @@ public class HelloSender {
                 helloMessage = session.createTextMessage(objectMapper.writeValueAsString(message));
                 helloMessage.setStringProperty("_type", "com.dags.springjms.model.HelloWorldMessage");
 
-                System.out.println("Sending hello");
+                System.out.println("Sending hello . . .");
 
                 return helloMessage;
             } catch (JsonProcessingException e) {
@@ -57,7 +57,7 @@ public class HelloSender {
             }
         });
 
-        System.out.println("Message received from Listener "+receiveMessage.getBody(String.class));
+        System.out.println("Message received from Listener: "+receiveMessage.getBody(String.class));
     }
 
 }
